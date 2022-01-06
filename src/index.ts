@@ -12,4 +12,12 @@ client.on('ready', () => {
   logger.info('The bot is ready');
 });
 
+client.on('messageCreate', (message) => {
+  if (message.content === 'ping') {
+    message.reply({
+      content: 'pong',
+    });
+  }
+});
+
 client.login(process.env.TOKEN);
