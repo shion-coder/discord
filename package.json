@@ -21,8 +21,10 @@
     "cross-env": "^7.0.3",
     "discord.js": "^13.5.0",
     "dotenv": "^10.0.0",
+    "mongoose": "^6.1.5",
     "winston": "^3.3.3",
-    "winston-daily-rotate-file": "^4.5.5"
+    "winston-daily-rotate-file": "^4.5.5",
+    "wokcommands": "^1.5.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",

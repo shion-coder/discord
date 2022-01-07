@@ -38,9 +38,11 @@
       }
     ],
     "import/prefer-default-export": "off",
+    "no-new": "off",
     "no-console": "off",
-    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "no-useless-return": "off",
     "func-names": ["error", "never"],
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
 
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
