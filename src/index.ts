@@ -1,11 +1,22 @@
 import 'dotenv/config';
 
 import { Client, Intents } from 'discord.js';
+import admin from 'firebase-admin';
 import path from 'path';
 import WOKCommands from 'wokcommands';
 
 import { Discord } from 'const';
 import logger from 'services/logger';
+
+import serviceAccount from './service.json';
+
+admin.initializeApp({
+  credential: admin.credential.cert({
+    privateKey: serviceAccount.private_key,
+    projectId: serviceAccount.project_id,
+    clientEmail: serviceAccount.client_email,
+  }),
+});
 
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
