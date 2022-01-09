@@ -12,7 +12,7 @@ export default {
     const collector = channel.createMessageCollector({
       filter: (m) => m.author.id === message.author.id,
       max: 1,
-      time: 1000 * 5,
+      time: 1000 * 10,
     });
 
     collector.on('collect', (collectMessage) => {
@@ -20,7 +20,18 @@ export default {
     });
 
     collector.on('end', (collected) => {
-      console.log('collected', collected.size);
+      if (collected.size === 0) {
+        message.reply('You did not provide username');
+        return;
+      }
+
+      let text = 'Collected:\n\n';
+
+      collected.forEach((collectedMessage) => {
+        text += `${collectedMessage.content}`;
+      });
+
+      message.reply(text);
     });
   },
 } as ICommand;
