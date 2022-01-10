@@ -5,7 +5,8 @@ export default {
   description: 'Replies with Pong',
 
   slash: 'both',
-  testOnly: true,
+  testOnly: false,
+  guildOnly: false,
 
   callback: () => {
     return 'Pong';

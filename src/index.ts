@@ -19,20 +19,24 @@ admin.initializeApp({
 });
 
 const client = new Client({
-  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+  intents: [
+    Intents.FLAGS.GUILDS,
+    Intents.FLAGS.GUILD_MEMBERS,
+    Intents.FLAGS.GUILD_MESSAGES,
+    Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+    Intents.FLAGS.DIRECT_MESSAGES,
+    Intents.FLAGS.DIRECT_MESSAGE_REACTIONS,
+  ],
 });
 
 client.on('ready', () => {
   logger.info('The bot is ready');
 
   new WOKCommands(client, {
-    commandDir: path.join(__dirname, 'commands'),
+    commandsDir: path.join(__dirname, 'commands'),
+    featuresDir: path.join(__dirname, 'features'),
     typeScript: true,
     testServers: [Discord.GUILD_ID],
-    mongoUri: process.env.MONGO_URI,
-    dbOptions: {
-      keepAlive: true,
-    },
   });
 });
 

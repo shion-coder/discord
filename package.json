@@ -18,7 +18,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^7.6.0",
     "cross-env": "^7.0.3",
+    "date-fns": "^2.28.0",
     "discord.js": "^13.5.0",
     "dotenv": "^10.0.0",
     "firebase-admin": "^10.0.1",

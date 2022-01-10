@@ -41,6 +41,7 @@
     "no-new": "off",
     "no-console": "off",
     "no-useless-return": "off",
+    "no-useless-escape": "off",
     "func-names": ["error", "never"],
     "no-underscore-dangle": ["error", { "allowAfterThis": true }],
 
